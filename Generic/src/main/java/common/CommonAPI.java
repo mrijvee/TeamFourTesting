@@ -4,12 +4,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+
 import java.util.concurrent.TimeUnit;
 
 public class CommmonAPI {
 
     public static WebDriver driver = null;
 
+    @BeforeTest
     public void startingTheBrowser(String browserName, String os, String URL){
         System.out.println("Starting the browser");
         getLocalDriver(browserName, os);
@@ -55,6 +59,7 @@ public class CommmonAPI {
         return driver;
     }
 
+    @AfterTest
     public void endingTheBrowser(){
         System.out.println("Ending the browser");
         driver.close();
