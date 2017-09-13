@@ -17,7 +17,8 @@ public class CommonAPI {
     public void startingTheBrowser(String browserName, String os, String URL){
         System.out.println("Starting the browser");
         getLocalDriver(browserName, os);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(2, TimeUnit.SECONDS);
         driver.get(URL);
         driver.manage().window().maximize();
     }
@@ -60,9 +61,9 @@ public class CommonAPI {
     }
 
     @AfterMethod
-    public void endingTheBrowser(){
+    public void endingTheBrowser() throws InterruptedException {
         System.out.println("Ending the browser");
+        Thread.sleep(1000);
         driver.close();
     }
 }
-
