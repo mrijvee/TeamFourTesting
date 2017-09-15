@@ -17,8 +17,8 @@ public class CommonAPI {
     public void startingTheBrowser(String browserName, String os, String URL){
         System.out.println("Starting the browser");
         getLocalDriver(browserName, os);
-        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-        driver.manage().timeouts().pageLoadTimeout(2, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
         driver.get(URL);
         driver.manage().window().maximize();
     }
