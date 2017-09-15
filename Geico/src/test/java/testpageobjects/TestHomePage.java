@@ -31,4 +31,31 @@ public class TestHomePage extends CommonAPI {
         findIDCard.retrieveIDCard();
     }
 
+    @Test
+    public void geicoContactUs() throws InterruptedException {
+        HomePage contactGeico = PageFactory.initElements(driver, HomePage.class);
+        contactGeico.setContactUs();
+    }
+
+    @Test
+    public void searchBox() throws InterruptedException {
+        HomePage geicoSearch = PageFactory.initElements(driver, HomePage.class);
+        geicoSearch.setSearch();
+    }
+
+    @Test
+    public void updateLocation() throws InterruptedException {
+        HomePage locationUpdate = PageFactory.initElements(driver, HomePage.class);
+        locationUpdate.setUpdateZip();
+    }
+
+    @Test
+    public void findProductLists() {
+        HomePage listOfProducts = PageFactory.initElements(driver, HomePage.class);
+        try {
+            listOfProducts.productsDropDown("", "", "");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }

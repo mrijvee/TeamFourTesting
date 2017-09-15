@@ -22,5 +22,6 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-remote-driver:3.5.3" level="project" />
   </component>
 </module>
