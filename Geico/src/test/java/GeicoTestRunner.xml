@@ -3,20 +3,20 @@
 
 <suite name="Geico" parallel="true">
 
-    <!--<test name="HomePage">-->
+    <test name="HomePage">
 
-        <!--<parameter name="browserName" value="chrome"/>-->
-        <!--<parameter name="os" value="win"/>-->
-        <!--<parameter name="URL" value="https://www.geico.com/"/>-->
+        <parameter name="browserName" value="chrome"/>
+        <parameter name="os" value="win"/>
+        <parameter name="URL" value="https://www.geico.com/"/>
 
-        <!--<classes>-->
-            <!--<class name="testpageobjects.TestHomePage"/>-->
-        <!--</classes>-->
-    <!--</test>-->
+        <classes>
+            <class name="testpageobjects.TestHomePage"/>
+        </classes>
+    </test>
 
     <test name="AutoInsurance">
 
-        <parameter name="browserName" value="firefox"/>
+        <parameter name="browserName" value="chrome"/>
         <parameter name="os" value="win"/>
         <parameter name="URL" value="https://www.geico.com/auto-insurance/"/>
 
@@ -25,15 +25,15 @@
         </classes>
     </test>
 
-    <!--<test name="SignUpAndLogIn">-->
+    <test name="SignUpAndLogIn">
 
-        <!--<parameter name="browserName" value="chrome"/>-->
-        <!--<parameter name="os" value="win"/>-->
-        <!--<parameter name="URL" value="https://www.geico.com/"/>-->
+        <parameter name="browserName" value="chrome"/>
+        <parameter name="os" value="win"/>
+        <parameter name="URL" value="https://www.geico.com/"/>
 
-        <!--<classes>-->
-            <!--<class name="testpageobjects.TestSignUpAndLogIn"/>-->
-        <!--</classes>-->
-    <!--</test>-->
+        <classes>
+            <class name="testpageobjects.TestSignUpAndLogIn"/>
+        </classes>
+    </test>
 
 </suite>

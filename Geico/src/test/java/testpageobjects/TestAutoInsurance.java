@@ -18,9 +18,9 @@ public class TestAutoInsurance extends CommonAPI {
                 1);
     }
 
-//    @Test
-//    public void testSetDiscountsForAges50AndUp() {
-//        AutoInsurance discountsForTheElderly = PageFactory.initElements(driver, AutoInsurance.class);
-//        discountsForTheElderly.setDiscountsForAges50AndUp();
-//    }
+    @Test
+    public void testSetDiscountsForAges50AndUp() {
+        AutoInsurance discountsForTheElderly = PageFactory.initElements(driver, AutoInsurance.class);
+        discountsForTheElderly.setDiscountsForAges50AndUp();
+    }
 }

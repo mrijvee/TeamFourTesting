@@ -94,7 +94,24 @@ public class HomePage extends CommonAPI {
     public static WebElement findAgentSubmit;
     @FindBy(how = How.XPATH, using = ".//*[@id='state_submit']")
     public static WebElement browserByStateSubmit;
-
+    @FindBy(how = How.XPATH, using = ".//*[@id='accessibility-main-content']/div[2]/div/div[1]/div/div/ul/li[3]/a")
+    public static WebElement addAVehicle;
+    @FindBy(how = How.XPATH, using = ".//*[@id='expressFormVEHICLE:policyNumber']")
+    public static WebElement policyNumber;
+    @FindBy(how = How.XPATH, using = ".//*[@id='expressFormVEHICLE:zipCode']")
+    public static WebElement mailingZipCode;
+    @FindBy(how = How.XPATH, using = ".//*[@id='expressFormVEHICLE:continueVEHICLE']")
+    public static WebElement addAVehicleSubmitBox;
+    @FindBy(how = How.XPATH, using = ".//*[@id='accessibility-main-content']/div[2]/div/div[2]/div/div/ul/li[5]/a")
+    public static WebElement requestRoadSideHelp;
+    @FindBy(how = How.XPATH, using = ".//*[@id='bodyB_inFirstName_txtFirstName']")
+    public static WebElement requestRoadSideHelpFirstName;
+    @FindBy(how = How.XPATH, using = ".//*[@id='bodyB_inLastName_txtLastName']")
+    public static WebElement requestRoadSideHelpLastName;
+    @FindBy(how = How.XPATH, using = ".//*[@id='bodyB_inPolicyNumber_txtPolicyNumber']")
+    public static WebElement requestRoadSideHelpPolicyNum;
+    @FindBy(how = How.XPATH, using = ".//*[@id='bodyB_btnContinue']")
+    public static WebElement requestRoadSideHelpSubmitBox;
 
     public void reportAClaim() throws InterruptedException {
         claimReport.click();
@@ -231,6 +248,19 @@ public class HomePage extends CommonAPI {
     public void geicoCareers() {
         careers.click();
         currentOpeningJobs.click();
+        try {
+            Thread.sleep(1500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void setAddAVehicle(String inputPolicyNum, String inputMailingZipCode) throws InterruptedException {
+        addAVehicle.click();
+        policyNumber.sendKeys(inputPolicyNum);
+        mailingZipCode.sendKeys(inputMailingZipCode);
+        addAVehicleSubmitBox.click();
+        Thread.sleep(1500);
     }
 
     public void informationHover(String setClaimsAndIncidents, String setWaysToSave, String setToolsAndResources, String setAboutGeico,
@@ -262,6 +292,16 @@ public class HomePage extends CommonAPI {
             informationHover.moveToElement(contactUsHover).perform();
             Thread.sleep(1500);
         }
+    }
+
+    public void setRequestRoadSideHelp(String inputRequestRoadSideHelpFirstName, String inputRequestRoadSideHelpLastName,
+                                       String inputRequestRoadSideHelpPolicyNum) throws InterruptedException {
+        requestRoadSideHelp.click();
+        requestRoadSideHelpFirstName.sendKeys(inputRequestRoadSideHelpFirstName);
+        requestRoadSideHelpLastName.sendKeys(inputRequestRoadSideHelpLastName);
+        requestRoadSideHelpPolicyNum.sendKeys(inputRequestRoadSideHelpPolicyNum);
+        requestRoadSideHelpSubmitBox.click();
+        Thread.sleep(1500);
     }
 
     public void setFindAnAgent(String inputFindAgentViaAddress, int inputBrowseByState) throws InterruptedException {
