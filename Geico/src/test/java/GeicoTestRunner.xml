@@ -3,7 +3,7 @@
 
 <suite name="Geico" parallel="true">
 
-    <test name="HomePage">
+    <test name="pageobjects.HomePage">
 
         <parameter name="browserName" value="chrome"/>
         <parameter name="os" value="win"/>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Progressive" parallel="true">
+
+    <test name="pageobjects.HomePage">
+
+        <parameter name="browserName" value="chrome"/>
+        <parameter name="os" value="win"/>
+        <parameter name="URL" value="https://www.progressive.com/"/>
+
+        <classes>
+            <class name="testpageobjects.TestHomePage"/>
+        </classes>
+    </test>
+
+</suite>

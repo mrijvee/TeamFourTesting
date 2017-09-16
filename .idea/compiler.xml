@@ -8,11 +8,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Geico" />
         <module name="Generic" />
+        <module name="Progressive" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="Geico" target="1.8" />
       <module name="Generic" target="1.8" />
+      <module name="Progressive" target="1.8" />
       <module name="TeamFourTesting" target="1.8" />
     </bytecodeTargetLevel>
   </component>
