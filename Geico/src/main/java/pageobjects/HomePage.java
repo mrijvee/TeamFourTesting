@@ -9,90 +9,90 @@ import org.openqa.selenium.support.How;
 public class HomePage extends CommonAPI {
 
     @FindBy(how = How.CSS, using = "#claim-btn")
-    private static WebElement claimReport;
+    public static WebElement claimReport;
     @FindBy(how = How.CSS, using = "#zip")
-    private static WebElement enterZip;
+    public static WebElement enterZip;
     @FindBy(how = How.CSS, using = "#submitButton")
-    private static WebElement startQuote;
+    public static WebElement startQuote;
     @FindBy(how = How.XPATH, using = ".//*[@id='accessibility-main-content']/div[2]/div/div[1]/div/div/ul/li[1]/a")
-    private static WebElement makeAPayment;
+    public static WebElement makeAPayment;
     @FindBy(how = How.XPATH, using = ".//*[@id='accessibility-main-content']/div[2]/div/div[1]/div/div/ul/li[2]/a")
-    private static WebElement getIDCard;
+    public static WebElement getIDCard;
     @FindBy(how = How.XPATH, using = ".//*[@id='footer-links-secondary']/ul/li[4]/a")
-    private static WebElement contactUs;
+    public static WebElement contactUs;
     @FindBy(how = How.XPATH, using = ".//*[@id='form-contents']/div/ul/li[1]/a")
-    private static WebElement questionRegardingPayment;
+    public static WebElement questionRegardingPayment;
     @FindBy(how = How.XPATH, using = ".//*[@id='form-contents']/div/ul/li[2]/a")
-    private static WebElement questionRegardingUserPass;
+    public static WebElement questionRegardingUserPass;
     @FindBy(how = How.XPATH, using = ".//*[@id='form-contents']/div/ul/li[3]/a")
-    private static WebElement questionRegardingOnlineAccount;
+    public static WebElement questionRegardingOnlineAccount;
     @FindBy(how = How.XPATH, using = ".//*[@id='form-contents']/div/ul/li[4]/a")
-    private static WebElement questionRegardingCoverageAndDeductible;
+    public static WebElement questionRegardingCoverageAndDeductible;
     @FindBy(how = How.XPATH, using = ".//*[@id='form-contents']/div/ul/li[5]/a")
-    private static WebElement questionRegardingAccidentForgiveness;
+    public static WebElement questionRegardingAccidentForgiveness;
     @FindBy(how = How.CSS, using = ".icon-search.right-icons-separator")
-    private static WebElement search;
+    public static WebElement search;
     @FindBy(how = How.XPATH, using = ".//.//*[@id='primary-navigation']/div[6]/form/input")
-    private static WebElement inputValue;
+    public static WebElement inputValue;
     @FindBy(how = How.XPATH, using = ".//*[@id='primary-navigation']/div[6]/form/button")
-    private static WebElement searchSubmit;
+    public static WebElement searchSubmit;
     @FindBy(how = How.XPATH, using = ".//*[@id='header-right-links']/ul[1]/li[1]/a/span[2]")
-    private static WebElement updateZip;
+    public static WebElement updateZip;
     @FindBy(how = How.NAME, using = "user-zip")
-    private static WebElement enterNewZip;
+    public static WebElement enterNewZip;
     @FindBy(how = How.CSS, using = "#geo-submit")
-    private static WebElement submitUpdate;
+    public static WebElement submitUpdate;
     @FindBy(how = How.XPATH, using = ".//*[@id='header-left-links']/ul[1]/li[1]/a")
-    private static WebElement productLists;
+    public static WebElement productLists;
     @FindBy(how = How.XPATH, using = ".//*[@id='primary-navigation']/div[2]/ul/li[1]/a/span[2]")
-    private static WebElement vehicleInsurance;
+    public static WebElement vehicleInsurance;
     @FindBy(how = How.XPATH, using = ".//*[@id='primary-navigation']/div[2]/ul/li[2]/a/span[2]")
-    private static WebElement propertyInsurance;
+    public static WebElement propertyInsurance;
     @FindBy(how = How.XPATH, using = ".//*[@id='primary-navigation']/div[2]/ul/li[3]/a/span[2]")
-    private static WebElement businessInsurance;
+    public static WebElement businessInsurance;
     @FindBy(how = How.XPATH, using = ".//*[@id='primary-navigation']/div[2]/ul/li[4]/a/span[2]")
-    private static WebElement additionalnsurance;
+    public static WebElement additionalnsurance;
 
 
 
     public void reportAClaim() throws InterruptedException {
         claimReport.click();
-        Thread.sleep(1000);
+        Thread.sleep(1500);
     }
 
-    public void setStartQuote() throws InterruptedException {
-        enterZip.sendKeys("11417");
+    public void setStartQuote(String inputZipCode) throws InterruptedException {
+        enterZip.sendKeys(inputZipCode);
         startQuote.click();
-        Thread.sleep(1000);
+        Thread.sleep(1500);
     }
 
     public void setMakeAPayment() throws InterruptedException {
         makeAPayment.click();
-        Thread.sleep(1000);
+        Thread.sleep(1500);
     }
 
     public void retrieveIDCard() throws InterruptedException {
         getIDCard.click();
-        Thread.sleep(1000);
+        Thread.sleep(1500);
     }
 
     public void setContactUs() throws InterruptedException {
         contactUs.click();
-        Thread.sleep(1000);
+        Thread.sleep(1500);
         questionRegardingPayment.click();
-        Thread.sleep(1000);
+        Thread.sleep(1500);
         driver.navigate().back();
         questionRegardingUserPass.click();
-        Thread.sleep(1000);
+        Thread.sleep(1500);
         driver.navigate().back();
         questionRegardingOnlineAccount.click();
-        Thread.sleep(1000);
+        Thread.sleep(1500);
         driver.navigate().back();
         questionRegardingCoverageAndDeductible.click();
-        Thread.sleep(1000);
+        Thread.sleep(1500);
         driver.navigate().back();
         questionRegardingAccidentForgiveness.click();
-        Thread.sleep(1000);
+        Thread.sleep(1500);
     }
 
     public void setSearch() throws InterruptedException {
@@ -103,9 +103,10 @@ public class HomePage extends CommonAPI {
         Thread.sleep(1000);
         searchSubmit.click();
         Thread.sleep(1000);
+        System.out.println(driver.getTitle());
     }
 
-    public void setUpdateZip()  {
+    public void setUpdateLocation()  {
         Actions updateZipCode = new Actions(driver);
         updateZipCode.moveToElement(updateZip).perform();
         try {
@@ -127,7 +128,7 @@ public class HomePage extends CommonAPI {
         }
     }
 
-    public WebElement productsDropDown(String setVehicleInsurance, String setPropertyInsurance,
+    public String productsDropDown(String setVehicleInsurance, String setPropertyInsurance,
                                    String setBusinessInsurance) throws InterruptedException {
         Actions getListOfProducts = new Actions(driver);
         getListOfProducts.moveToElement(productLists).perform();
@@ -145,7 +146,7 @@ public class HomePage extends CommonAPI {
             getListOfProducts.moveToElement(additionalnsurance).perform();
             Thread.sleep(1000);
         }
-        return additionalnsurance;
+        return setVehicleInsurance;
     }
 }
 

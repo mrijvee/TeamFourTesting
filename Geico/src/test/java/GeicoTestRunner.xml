@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="Geico" parallel="tests">
+<suite name="Geico" parallel="true">
 
-    <test name="Geico Features">
+    <test name="HomePage">
 
         <parameter name="browserName" value="chrome"/>
         <parameter name="os" value="win"/>
@@ -11,6 +11,17 @@
 
         <classes>
             <class name="testpageobjects.TestHomePage"/>
+        </classes>
+    </test>
+
+    <test name="AutoInsurance">
+
+        <parameter name="browserName" value="firefox"/>
+        <parameter name="os" value="win"/>
+        <parameter name="URL" value="https://www.geico.com/auto-insurance/"/>
+
+        <classes>
+            <class name="testpageobjects.TestAutoInsurance"/>
         </classes>
     </test>
 
