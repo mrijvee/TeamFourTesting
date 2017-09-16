@@ -10,8 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>Generic</module>
-        <module>Geico</module>
-        <module>Progressive</module>
+
     </modules>
 
     <dependencyManagement>
