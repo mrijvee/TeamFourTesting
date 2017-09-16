@@ -1,10 +1,12 @@
 package pageobjects;
 
 import common.CommonAPI;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.ui.Select;
 
 public class HomePage extends CommonAPI {
 
@@ -52,7 +54,46 @@ public class HomePage extends CommonAPI {
     public static WebElement businessInsurance;
     @FindBy(how = How.XPATH, using = ".//*[@id='primary-navigation']/div[2]/ul/li[4]/a/span[2]")
     public static WebElement additionalnsurance;
-
+    @FindBy(how = How.XPATH, using = ".//*[@id='primary-navigation']/div[2]/ul/li[1]/div/ul/li[1]/a")
+    public static WebElement vehiclelnsuranceAuto;
+    @FindBy(how = How.XPATH, using = ".//*[@id='primary-navigation']/div[2]/ul/li[1]/div/ul/li[2]/a/span")
+    public static WebElement vehiclelnsuranceMotorcycle;
+    @FindBy(how = How.XPATH, using = ".//*[@id='primary-navigation']/div[2]/ul/li[1]/div/ul/li[3]/a/span")
+    public static WebElement vehiclelnsuranceATV;
+    @FindBy(how = How.XPATH, using = ".//*[@id='primary-navigation']/div[2]/ul/li[1]/div/ul/li[4]/a/span")
+    public static WebElement vehiclelnsuranceRV;
+    @FindBy(how = How.XPATH, using = ".//*[@id='primary-navigation']/div[2]/ul/li[1]/div/ul/li[5]/a/span")
+    public static WebElement vehiclelnsuranceBoatOrPWC;
+    @FindBy(how = How.XPATH, using = ".//*[@id='primary-navigation']/div[2]/ul/li[1]/div/ul/li[6]/a/span")
+    public static WebElement vehiclelnsuranceCollectorAuto;
+    @FindBy(how = How.XPATH, using = ".//*[@id='primary-navigation']/div[2]/ul/li[1]/div/ul/li[7]/a/span")
+    public static WebElement vehiclelnsuranceRideSharing;
+    @FindBy(how = How.XPATH, using = ".//*[@id='footer-links-secondary']/ul/li[3]/a")
+    public static WebElement careers;
+    @FindBy(how = How.XPATH, using = ".//*[@id='lower-search']/div/p[2]/a/button")
+    public static WebElement currentOpeningJobs;
+    @FindBy(how = How.XPATH, using = ".//*[@id='header-left-links']/ul[1]/li[2]/a")
+    public static WebElement informationLists;
+    @FindBy(how = How.XPATH, using = ".//*[@id='primary-navigation']/div[3]/ul/li[1]/a/span[2]")
+    public static WebElement claimsAndIncidents;
+    @FindBy(how = How.XPATH, using = ".//*[@id='primary-navigation']/div[3]/ul/li[2]/a/span[2]")
+    public static WebElement waysToSave;
+    @FindBy(how = How.XPATH, using = ".//*[@id='primary-navigation']/div[3]/ul/li[3]/a/span[2]")
+    public static WebElement toolsAndResources;
+    @FindBy(how = How.XPATH, using = ".//*[@id='primary-navigation']/div[3]/ul/li[4]/a/span[2]")
+    public static WebElement aboutGeico;
+    @FindBy(how = How.XPATH, using = ".//*[@id='primary-navigation']/div[3]/ul/li[5]/a/span[2]")
+    public static WebElement webAndMobile;
+    @FindBy(how = How.XPATH, using = ".//*[@id='primary-navigation']/div[3]/ul/li[6]/a/span[2]")
+    public static WebElement contactUsHover;
+    @FindBy(how = How.XPATH, using = ".//*[@id='agents_link']/a")
+    public static WebElement findAnAgent;
+    @FindBy(how = How.XPATH, using = ".//*[@id='address']")
+    public static WebElement findAgentViaAddress;
+    @FindBy(how = How.XPATH, using = ".//*[@id='address_submit']")
+    public static WebElement findAgentSubmit;
+    @FindBy(how = How.XPATH, using = ".//*[@id='state_submit']")
+    public static WebElement browserByStateSubmit;
 
 
     public void reportAClaim() throws InterruptedException {
@@ -128,26 +169,115 @@ public class HomePage extends CommonAPI {
         }
     }
 
-    public String productsDropDown(String setVehicleInsurance, String setPropertyInsurance,
-                                   String setBusinessInsurance) throws InterruptedException {
+    public void productsHover(String setVehicleInsurance, String setPropertyInsurance, String setBusinessInsurance, String setAdditionalInsurance,
+                              String setVehiclelnsuranceAuto, String setVehiclelnsuranceMotorcycle, String setVehiclelnsuranceATV,
+                              String setVehiclelnsuranceRV, String setVehiclelnsuranceBoatOrPWC, String setVehiclelnsuranceCollectorAuto,
+                              String setVehiclelnsuranceRideSharing) throws InterruptedException {
         Actions getListOfProducts = new Actions(driver);
         getListOfProducts.moveToElement(productLists).perform();
-        Thread.sleep(1000);
+        Thread.sleep(1500);
         if (setVehicleInsurance.equalsIgnoreCase("vehicle insurance")) {
             getListOfProducts.moveToElement(vehicleInsurance).perform();
-            Thread.sleep(1000);
+            Thread.sleep(1500);
+            Actions vehicleInsuranceHover = new Actions(driver);
+            vehicleInsuranceHover.moveToElement(vehicleInsurance);
+            if (setVehiclelnsuranceAuto.contains("auto")) {
+                vehicleInsuranceHover.moveToElement(vehiclelnsuranceAuto).perform();
+                vehiclelnsuranceAuto.click();
+                Thread.sleep(1500);
+            }
+            else if (setVehiclelnsuranceMotorcycle.contains("motorcycle")) {
+                vehicleInsuranceHover.moveToElement(vehiclelnsuranceMotorcycle).perform();
+                vehiclelnsuranceMotorcycle.click();
+                Thread.sleep(1500);
+            }
+            else if (setVehiclelnsuranceATV.contains("ATV")) {
+                vehicleInsuranceHover.moveToElement(vehiclelnsuranceATV).perform();
+                vehiclelnsuranceATV.click();
+                Thread.sleep(1500);
+            }
+            else if (setVehiclelnsuranceRV.contains("RV")) {
+                vehicleInsuranceHover.moveToElement(vehiclelnsuranceRV).perform();
+                vehiclelnsuranceRV.click();
+                Thread.sleep(1500);
+            }
+            else if (setVehiclelnsuranceBoatOrPWC.contains("boat")) {
+                vehicleInsuranceHover.moveToElement(vehiclelnsuranceBoatOrPWC).perform();
+                vehiclelnsuranceBoatOrPWC.click();
+                Thread.sleep(1500);
+            }
+            else if (setVehiclelnsuranceCollectorAuto.contains("collector")) {
+                vehicleInsuranceHover.moveToElement(vehiclelnsuranceCollectorAuto).perform();
+                vehiclelnsuranceCollectorAuto.click();
+                Thread.sleep(1500);
+            }
+            else if (setVehiclelnsuranceRideSharing.contains("sharing")) {
+                vehicleInsuranceHover.moveToElement(vehiclelnsuranceRideSharing).perform();
+                vehiclelnsuranceRideSharing.click();
+                Thread.sleep(1500);
+            }
         } else if (setPropertyInsurance.equalsIgnoreCase("property insurance")) {
             getListOfProducts.moveToElement(propertyInsurance).perform();
-            Thread.sleep(1000);
+            Thread.sleep(1500);
         } else if (setBusinessInsurance.equalsIgnoreCase("business insurance")) {
             getListOfProducts.moveToElement(businessInsurance).perform();
-            Thread.sleep(1000);
-        } else {
+            Thread.sleep(1500);
+        } else if (setAdditionalInsurance.equalsIgnoreCase("additional insurance")){
             getListOfProducts.moveToElement(additionalnsurance).perform();
-            Thread.sleep(1000);
+            Thread.sleep(1500);
         }
-        return setVehicleInsurance;
+    }
+
+    public void geicoCareers() {
+        careers.click();
+        currentOpeningJobs.click();
+    }
+
+    public void informationHover(String setClaimsAndIncidents, String setWaysToSave, String setToolsAndResources, String setAboutGeico,
+                                 String setWebAndMobile, String setContactUsHover) throws InterruptedException {
+        Actions informationHover = new Actions(driver);
+        informationHover.moveToElement(informationLists).perform();
+        Thread.sleep(1500);
+        if (setClaimsAndIncidents.contains("claims")) {
+            informationHover.moveToElement(claimsAndIncidents).perform();
+            Thread.sleep(1500);
+        }
+        else if (setWaysToSave.contains("save")) {
+            informationHover.moveToElement(waysToSave).perform();
+            Thread.sleep(1500);
+        }
+        else if (setToolsAndResources.contains("resources")) {
+            informationHover.moveToElement(toolsAndResources).perform();
+            Thread.sleep(1500);
+        }
+        else if (setAboutGeico.contains("about")) {
+            informationHover.moveToElement(aboutGeico).perform();
+            Thread.sleep(1500);
+        }
+        else if (setWebAndMobile.contains("mobile")) {
+            informationHover.moveToElement(webAndMobile).perform();
+            Thread.sleep(1500);
+        }
+        else if (setContactUsHover.contains("contact")) {
+            informationHover.moveToElement(contactUsHover).perform();
+            Thread.sleep(1500);
+        }
+    }
+
+    public void setFindAnAgent(String inputFindAgentViaAddress, int inputBrowseByState) throws InterruptedException {
+        findAnAgent.click();
+        Thread.sleep(1500);
+        findAgentViaAddress.sendKeys(inputFindAgentViaAddress);
+        Thread.sleep(1500);
+        findAgentSubmit.click();
+        Thread.sleep(1500);
+        Select browseByState = new Select(driver.findElement(By.xpath(".//*[@id='state_select']")));
+        browseByState.selectByIndex(inputBrowseByState);
+        Thread.sleep(1500);
+        browserByStateSubmit.click();
+        Thread.sleep(1500);
     }
 }
+
 
 

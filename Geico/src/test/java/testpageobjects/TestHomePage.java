@@ -43,15 +43,39 @@ public class TestHomePage extends CommonAPI {
 //        geicoSearch.setSearch();
 //    }
 //
-    @Test
-    public void testSetUpdateLocation() throws InterruptedException {
-        HomePage locationUpdate = PageFactory.initElements(driver, HomePage.class);
-        locationUpdate.setUpdateLocation();
-    }
+//    @Test
+//    public void testSetUpdateLocation() throws InterruptedException {
+//        HomePage locationUpdate = PageFactory.initElements(driver, HomePage.class);
+//        locationUpdate.setUpdateLocation();
+//    }
 
 //    @Test
-//    public void testSetProductsDropDown() throws InterruptedException {
-//        HomePage listOfProducts = PageFactory.initElements(driver, HomePage.class);
-//        listOfProducts.productsDropDown("", "", "");
+//    public void testSetProductsHover() throws InterruptedException {
+//        HomePage testProductsHover = PageFactory.initElements(driver, HomePage.class);
+//        testProductsHover.productsHover("vehicle insurance", "", "", "",
+//                "", "", "", "", "",
+//                "", "sharing");
 //    }
+
+//    @Test
+//    public void testGeicoCareers() {
+//        HomePage testCareers = PageFactory.initElements(driver, HomePage.class);
+//        testCareers.geicoCareers();
+//    }
+
+//    @Test
+//    public void testInformationHover() throws InterruptedException {
+//        HomePage hoverInformation = PageFactory.initElements(driver, HomePage.class);
+//        hoverInformation.informationHover("", "save", "", "", "", "");
+//    }
+
+    @Test
+    public void testFindAnAgent() {
+        HomePage locateAnAgent = PageFactory.initElements(driver, HomePage.class);
+        try {
+            locateAnAgent.setFindAnAgent("32-72 Steinway St", 25);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }
