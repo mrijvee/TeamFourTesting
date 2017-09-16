@@ -1,14 +1,15 @@
 package common;
 
-import org.apache.xpath.SourceTree;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.concurrent.TimeUnit;
 
-class CommmonAPI {
+class CommonAPI {
     public static WebDriver driver = null;
+
+    public void whitespaces(){}
 
     public void setUp(String browserName, String os, String URL){
         System.out.println("session is going to start");
