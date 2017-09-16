@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Generic" />
+        <module name="NorthwesternMutual" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Generic" target="1.5" />
+      <module name="NorthwesternMutual" target="1.5" />
       <module name="TeamFourTesting" target="1.5" />
     </bytecodeTargetLevel>
   </component>
