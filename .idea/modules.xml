@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Geico/Geico.iml" filepath="$PROJECT_DIR$/Geico/Geico.iml" />
       <module fileurl="file://$PROJECT_DIR$/Generic/Generic.iml" filepath="$PROJECT_DIR$/Generic/Generic.iml" />
-      <module fileurl="file://$PROJECT_DIR$/NorthwesternMutual/NorthwesternMutual.iml" filepath="$PROJECT_DIR$/NorthwesternMutual/NorthwesternMutual.iml" />
       <module fileurl="file://$PROJECT_DIR$/TeamFourTesting.iml" filepath="$PROJECT_DIR$/TeamFourTesting.iml" />
     </modules>
   </component>
